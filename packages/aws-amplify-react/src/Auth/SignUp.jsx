@@ -111,6 +111,7 @@ export default class SignUp extends AuthPiece {
                             onChange={this.handleInputChange}
                         />
                     </FormField>
+                    {/*
                     <FormField theme={theme} style={{display: 'none'}}>
                         <InputLabel>{I18n.get('Phone Number')}</InputLabel>
                         <SelectInput theme={theme}>
@@ -130,6 +131,7 @@ export default class SignUp extends AuthPiece {
                             />
                         </SelectInput>
                     </FormField>
+                    */}
                 </SectionBody>
                 <SectionFooter theme={theme}>
                     <SectionFooterPrimaryContent theme={theme}>
