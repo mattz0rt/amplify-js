@@ -25,6 +25,7 @@ jobs:
       - run: yarn run bootstrap
       - run: yarn run build
       - run: yarn run coverage
+      - run: npm pack ./packages/aws-amplify-react
       - save_cache:
           key: amplify-yarn-deps-{{ .Branch }}-{{ checksum "yarn.lock" }}
           paths:
@@ -36,6 +37,8 @@ jobs:
       - persist_to_workspace:
           root: .
           paths: .
+      - store_artifacts:
+          path: aws-amplify-react*.tgz
   unit_test:
     <<: *defaults
     steps:
