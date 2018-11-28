@@ -136,23 +136,23 @@ workflows:
   build_test_deploy:
     jobs:
       - build
-      - unit_test:
-          requires:
-            - build
-      - integration_test_auth:
-          filters:
-            branches:
-              only:
-                - release
-                - master
-          requires:
-            - build
-      - deploy:
-          filters:
-            branches:
-              only:
-                - release
-                - master
-                - beta
-          requires:
-            - unit_test
+      # - unit_test:
+          # requires:
+            # - build
+      # - integration_test_auth:
+          # filters:
+            # branches:
+              # only:
+                # - release
+                # - master
+          # requires:
+            # - build
+      # - deploy:
+          # filters:
+            # branches:
+              # only:
+                # - release
+                # - master
+                # - beta
+          # requires:
+            # - unit_test

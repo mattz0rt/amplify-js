@@ -97,7 +97,7 @@ describe('signUp', () => {
             wrapper.find(Input).at(1).simulate('change', event_password);
             wrapper.find(Input).at(2).simulate('change', event_email);
             // wrapper.find(Input).at(3).simulate('change', event_phone);
-            wrapper.find('select').at(0).simulate('change', dial_code);
+            // wrapper.find('select').at(0).simulate('change', dial_code);
             await wrapper.find(Button).simulate('click');
 
 
