@@ -25,7 +25,10 @@ jobs:
       - run: yarn run bootstrap
       - run: yarn run build
       - run: yarn run coverage
+      # HACK TO GEN NPM PKG
       - run: npm pack ./packages/aws-amplify-react
+      - run: mkdir artifacts
+      - run: mv aws-amplify-react*.tgz artifacts/
       - save_cache:
           key: amplify-yarn-deps-{{ .Branch }}-{{ checksum "yarn.lock" }}
           paths:
@@ -38,7 +41,7 @@ jobs:
           root: .
           paths: .
       - store_artifacts:
-          path: aws-amplify-react*.tgz
+          path: artifacts
   unit_test:
     <<: *defaults
     steps:
